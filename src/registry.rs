@@ -262,3 +262,65 @@ impl RegisteredPoStProof {
         }
     }
 }
+
+
+
+#[cfg(test)]
+pub mod tests {
+    use crate::{RegisteredSealProof, RegisteredPoStProof};
+    use crate::registry::Version;
+    use anyhow::Result;
+
+    #[test]
+    fn test_registered_seal_proof_accessors() -> Result<()> {
+        let rsps = vec![
+            RegisteredSealProof::StackedDrg1KiBV1,
+            RegisteredSealProof::StackedDrg16MiBV1,
+            RegisteredSealProof::StackedDrg256MiBV1,
+            RegisteredSealProof::StackedDrg1GiBV1,
+            RegisteredSealProof::StackedDrg32GiBV1
+        ];
+
+        for rsp in rsps {
+            let _ = rsp.as_v1_config(); // make sure doesn't panic
+            let _ = rsp.cache_params_path()?;
+            let _ = rsp.cache_verifying_key_path()?;
+            let _ = rsp.circuit_identifier()?;
+            let _ = rsp.params_cid()?;
+            let _ = rsp.verifying_key_cid()?;
+
+            assert!(rsp.partitions() > 0, "partitions() failed");
+            assert!(u64::from(rsp.sector_size()) > 0, "sector_size() failed");
+            assert!(rsp.single_partition_proof_len() > 0, "single_partition_proof_len() failed");
+            assert_eq!(rsp.version(), Version::V1, "version() was wrong");
+        }
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_registered_post_proof_accessors() -> Result<()> {
+        let rpps = vec![
+            RegisteredPoStProof::StackedDrg1KiBV1,
+            RegisteredPoStProof::StackedDrg16MiBV1,
+            RegisteredPoStProof::StackedDrg256MiBV1,
+            RegisteredPoStProof::StackedDrg1GiBV1,
+            RegisteredPoStProof::StackedDrg32GiBV1
+        ];
+
+        for rpp in rpps {
+            let _ = rpp.as_v1_config(); // make sure doesn't panic
+            assert!(rpp.cache_params_path().is_ok(), "cache_params_path() failed");
+            assert!(rpp.cache_verifying_key_path().is_ok(), "cache_verifying_key_path() failed");
+            assert!(rpp.circuit_identifier().is_ok(), "circuit_identifier() failed");
+            assert!(rpp.params_cid().is_ok(), "params_cid() failed");
+            assert!(rpp.partitions() > 0, "partitions() failed");
+            assert!(u64::from(rpp.sector_size()) > 0, "sector_size() failed");
+            assert!(rpp.single_partition_proof_len() > 0, "single_partition_proof_len() failed");
+            assert!(rpp.verifying_key_cid().is_ok(), "verifying_key_cid() failed");
+            assert_eq!(rpp.version(), Version::V1, "version() was wrong");
+        }
+
+        Ok(())
+    }
+}
