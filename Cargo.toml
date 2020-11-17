@@ -12,8 +12,9 @@ readme = "README.md"
 anyhow = "1.0.26"
 bincode = "1.1.2"
 serde = "1.0.104"
-filecoin-proofs-v1 = { package = "filecoin-proofs", version = "5.4.0", default-features = false, features = ["gpu"] }
-bellperson = { version = "0.12", default-features = false, features = ["gpu"] }
+filecoin-proofs-v1 = { package = "filecoin-proofs", version = "5", default-features = false, features = ["gpu"],path="../rust-fil-proofs/filecoin-proofs" }
+bellperson = { version = "0.9", default-features = false, features = ["gpu"] ,path="../bellperson"}
+
 
 [features]
 default = ["pairing"]
