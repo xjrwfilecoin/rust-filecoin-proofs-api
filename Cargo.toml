@@ -1,6 +1,6 @@
 [package]
 name = "filecoin-proofs-api"
-version = "5.4.1"
+version = "5.4.0"
 description = "API to interact with the proofs system in Filecoin"
 authors = ["dignifiedquire <me@dignifiedquire.com>"]
 edition = "2018"
@@ -13,7 +13,7 @@ anyhow = "1.0.26"
 bincode = "1.1.2"
 serde = "1.0.104"
 filecoin-proofs-v1 = { package = "filecoin-proofs", version = "5", default-features = false, features = ["gpu"],path="../rust-fil-proofs/filecoin-proofs" }
-bellperson = { version = "0.9", default-features = false, features = ["gpu"] ,path="../bellperson"}
+bellperson = { version = "0.12", default-features = false, features = ["gpu"] ,path="../bellperson"}
 
 
 [features]
