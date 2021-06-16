@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 
 ## [Unreleased]
 
+## [8.0.1] - 2021-06-09
+
+- Updates for finalizing snarkpack support [#57](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/57)
+
+## [8.0.0] - 2021-06-01
+
+- Integrate Proof Aggregation API [#51](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/51)
+
+## [7.0.0] - 2021-04-28
+
+- Improve RAM usage during unseal [#56](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/56)
+- Update rust-toolchain to 1.51.0 [#55](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/55)
+
+## [6.1.0] - 2021-03-11
+
+- Update docs and changelog for release [#53](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/53)
+- Improve docs and update to latest Proofs [#52](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/52)
+
+## [6.0.0] - 2020-12-01
+
+- Add support for updated proofs api_versioning [#49](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/49)
+
 ## [5.4.1] - 2020-11-02
 
 - Upgrade bellperson to required version [#48](https://github.com/filecoin-project/rust-filecoin-proofs-api/pull/48)
@@ -78,7 +100,12 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 
 - Initial stable release
 
-[Unreleased]: https://github.com/filecoin-project/rust-filecoin-proofs-api/compare/v5.4.1...HEAD
+[Unreleased]: https://github.com/filecoin-project/rust-filecoin-proofs-api/compare/v8.0.1...HEAD
+[8.0.1]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v8.0.1
+[8.0.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v8.0.0
+[7.0.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v7.0.0
+[6.1.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v6.1.0
+[6.0.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v6.0.0
 [5.4.1]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v5.4.1
 [5.4.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v5.4.0
 [5.3.0]: https://github.com/filecoin-project/rust-filecoin-proofs-api/tree/v5.3.0
